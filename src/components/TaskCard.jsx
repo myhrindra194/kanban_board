@@ -1,8 +1,17 @@
+import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+
 /* eslint-disable react/prop-types */
-export default function TaskCard({ task }) {
+export default function TaskCard({ task, handleDelete }) {
   return (
-    <div className="w-60 p-2 mb-2 dark:bg-slate-900/100 border border-slate-400/100 rounded-xl outline-none hover:ring-2 ring-blue-500 dark:text-white indent-4 dark:border-none shadow-sm">
-      {task}
+    <div className="w-60 p-2 mb-2 dark:bg-slate-900/100 rounded-xl outline-none hover:ring-2 ring-blue-500 dark:text-white  bg-blue-100/100 flex justify-between items-center group">
+      <p className="indent-4">{task}</p>
+      <div className="flex gap-1">
+        <PencilIcon className="size-4 group-hover:block hidden cursor-pointer" />
+        <TrashIcon
+          className="size-4 group-hover:block hidden cursor-pointer"
+          onClick={handleDelete}
+        />
+      </div>
     </div>
   );
 }
