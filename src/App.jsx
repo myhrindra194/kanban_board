@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ListTask from "./components/ListTask";
 import Navbar from "./components/Navbar";
+import { ListTaskProvider } from "./components/TasksContext";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -19,7 +20,9 @@ function App() {
   return (
     <main className="lg:container mx-auto w-full">
       <Navbar theme={theme} handleToogleTheme={handleToogleTheme} />
-      <ListTask />
+      <ListTaskProvider>
+        <ListTask />
+      </ListTaskProvider>
     </main>
   );
 }
