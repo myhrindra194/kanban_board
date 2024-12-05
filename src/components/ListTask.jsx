@@ -7,8 +7,13 @@ export default function ListTask() {
       ? JSON.parse(window.localStorage.getItem("myList"))
       : []
   );
+  const [idUnique, setIdUnique] = useState(
+    window.localStorage.getItem("idUnique")
+      ? parseInt(localStorage.getItem("idUnique"))
+      : 0
+  );
   const [task, setTask] = useState({
-    id: 0,
+    id: idUnique,
     content: "",
   });
 
@@ -21,6 +26,10 @@ export default function ListTask() {
     localStorage.setItem("myList", JSON.stringify(taskList));
   }, [taskList]);
 
+  useEffect(() => {
+    localStorage.setItem("idUnique", JSON.stringify(idUnique));
+  }, [idUnique]);
+
   const handleChange = (e) => {
     setTask({ ...task, content: e.target.value });
   };
@@ -28,11 +37,19 @@ export default function ListTask() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setTaskList([...taskList, task]);
-    setTask({ id: task.id + 1, content: "" });
+    setTask({ id: idUnique + 1, content: "" });
+    setIdUnique(idUnique + 1);
   };
 
   const handleDelete = (id) => {
     const newTasks = taskList.filter((task) => task.id !== id);
+    setTaskList(newTasks);
+  };
+
+  const handleEdit = (id, newContent) => {
+    const newTasks = taskList.map((task, index) => {
+      if (index === id) return { ...task, content: newContent };
+    });
     setTaskList(newTasks);
   };
 
@@ -48,6 +65,7 @@ export default function ListTask() {
               key={task.id}
               task={task.content}
               handleDelete={() => handleDelete(task.id)}
+              handleEdit={() => handleEdit(task.id)}
             />
           ))}
         <form action="" onSubmit={handleSubmit}>
