@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { PlusCircleIcon } from "@heroicons/react/24/outline";
 import { useContext, useState } from "react";
 import { ListTaskContext } from "./TasksContext";
 
@@ -75,9 +76,9 @@ export default function AddTask({ progress }) {
   ) : (
     <button
       onClick={handleExpanded}
-      className=" w-60 text-sm bg-blue-400/100 py-2.5 rounded-xl text-white hover:bg-blue-500"
+      className=" w-60 bg-blue-400/100 py-2 rounded-xl text-white hover:bg-blue-500 flex justify-center items-center"
     >
-      Add task
+      <PlusCircleIcon className="size-6 text-white me-2" /> Add task
     </button>
   );
 }

@@ -37,7 +37,7 @@ export default function TaskCard({ task }) {
         <form
           action=""
           onSubmit={handleSubmit}
-          className="dark:text-white bg-blue-100/100 dark:bg-slate-500/100 py-5 px-3 rounded-2xl w-60 text-sm mb-4"
+          className="dark:text-white bg-blue-100/100 dark:bg-slate-900/100 py-5 px-3 rounded-2xl w-60 text-sm mb-4"
         >
           <input
             name="title"
