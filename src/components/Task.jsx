@@ -93,7 +93,7 @@ export default function TaskCard({ task }) {
           <div className="flex gap-2 dark:text-black mt-5">
             {task.progress != "todo" && (
               <button
-                className="px-2 bg-red-300/100 rounded-2xl hover:bg-red-400"
+                className="px-2 bg-red-300/100 rounded-2xl text-red-700 font-semibold hover:bg-red-400"
                 onClick={() => updateTaskProgress("todo")}
               >
                 <small>Todo</small>
@@ -101,7 +101,7 @@ export default function TaskCard({ task }) {
             )}
             {task.progress != "doing" && (
               <button
-                className="px-2 bg-yellow-200/100 rounded-2xl hover:bg-yellow-400"
+                className="px-2 bg-yellow-200/100 rounded-2xl text-yellow-700 font-semibold hover:bg-yellow-300"
                 onClick={() => updateTaskProgress("doing")}
               >
                 <small>Doing</small>
@@ -109,7 +109,7 @@ export default function TaskCard({ task }) {
             )}
             {task.progress != "done" && (
               <button
-                className="px-2 bg-green-300/100 rounded-2xl hover:bg-green-400"
+                className="px-2 bg-green-200/100 rounded-2xl font-semibold text-green-600 hover:bg-green-400"
                 onClick={() => updateTaskProgress("done")}
               >
                 <small>Done</small>
