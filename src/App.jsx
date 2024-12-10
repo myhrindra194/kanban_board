@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ListTask from "./components/ListTask";
+import Column from "./components/Column";
 import Navbar from "./components/Navbar";
 import { ListTaskProvider } from "./components/TasksContext";
 
@@ -21,7 +21,11 @@ function App() {
     <main className="lg:container mx-auto w-full">
       <Navbar theme={theme} handleToogleTheme={handleToogleTheme} />
       <ListTaskProvider>
-        <ListTask />
+        <div className="grid grid-cols-3 max-md:grid-cols-1 justify-evenly items-start">
+          <Column title="TODO" progress="todo" />
+          <Column title="DOING" progress="doing" />
+          <Column title="DONE" progress="done" />
+        </div>
       </ListTaskProvider>
     </main>
   );
