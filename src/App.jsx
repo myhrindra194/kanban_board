@@ -21,7 +21,8 @@ function App() {
     <main className="lg:container mx-auto w-full">
       <Navbar theme={theme} handleToogleTheme={handleToogleTheme} />
       <ListTaskProvider>
-        <div className="grid grid-cols-3 max-md:grid-cols-1 justify-evenly items-start">
+        <div className="grid grid-cols-4 max-md:grid-cols-2 max-sm:grid-cols-1 justify-evenly items-start mt-5">
+          <Column title="BACKLOG" progress="backlog" />
           <Column title="TODO" progress="todo" />
           <Column title="DOING" progress="doing" />
           <Column title="DONE" progress="done" />

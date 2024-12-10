@@ -37,7 +37,7 @@ export default function TaskCard({ task }) {
         <form
           action=""
           onSubmit={handleSubmit}
-          className="dark:text-white bg-blue-100/100 dark:bg-slate-500/100 py-5 px-3 rounded-2xl w-60 text-sm"
+          className="dark:text-white bg-blue-100/100 dark:bg-slate-500/100 py-5 px-3 rounded-2xl w-60 text-sm mb-4"
         >
           <input
             name="title"
@@ -66,7 +66,6 @@ export default function TaskCard({ task }) {
             <button
               type="submit"
               className="ms-2 p-2 rounded-xl bg-blue-900 text-white disabled:opacity-80"
-              disabled={newTask.content.trim() === ""}
             >
               Edit
             </button>

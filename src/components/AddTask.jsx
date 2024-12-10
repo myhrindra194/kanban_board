@@ -75,7 +75,7 @@ export default function AddTask({ progress }) {
   ) : (
     <button
       onClick={handleExpanded}
-      className=" w-full text-sm bg-blue-400/100 py-2.5 rounded-xl text-white"
+      className=" w-60 text-sm bg-blue-400/100 py-2.5 rounded-xl text-white hover:bg-blue-500"
     >
       Add task
     </button>
