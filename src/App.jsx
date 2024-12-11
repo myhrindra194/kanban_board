@@ -18,10 +18,10 @@ function App() {
   };
 
   return (
-    <main className="lg:container mx-auto w-full">
+    <main className="container mx-auto w-full">
       <Navbar theme={theme} handleToogleTheme={handleToogleTheme} />
       <ListTaskProvider>
-        <div className="grid grid-cols-4 max-md:grid-cols-2 max-sm:grid-cols-1 justify-evenly items-start mt-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl: gap-4 place-content-center  items-start mt-5 w-full">
           <Column title="BACKLOG" progress="backlog" />
           <Column title="TODO" progress="todo" />
           <Column title="DOING" progress="doing" />
